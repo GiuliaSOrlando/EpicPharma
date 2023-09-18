@@ -12,6 +12,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <nav>
+                <asp:HyperLink NavigateUrl="~/Signup.aspx" runat="server"><p>Signup</p></asp:HyperLink>
+                <asp:HyperLink NavigateUrl="~/Login.aspx" runat="server"><p>Login</p></asp:HyperLink>
+            </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
