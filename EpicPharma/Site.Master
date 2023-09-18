@@ -35,7 +35,7 @@
                 <div id="div-footer">
                     <div>
                         <div>
-                            <img class="logo" src="/Content/img/EPIC_PHARMA_ridotto.png" />
+                            <img src="/Content/img/EPIC_PHARMA_ridotto.png" />
                         </div>
                         <div class="div-span">
                             <span>Via Renato Embriani 46</span>
