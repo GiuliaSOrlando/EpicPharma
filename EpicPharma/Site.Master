@@ -6,6 +6,9 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -13,11 +16,64 @@
     <form id="form1" runat="server">
         <div>
             <nav>
-                <asp:HyperLink NavigateUrl="~/Signup.aspx" runat="server"><p>Signup</p></asp:HyperLink>
-                <asp:HyperLink NavigateUrl="~/Login.aspx" runat="server"><p>Login</p></asp:HyperLink>
+                <div class="div-logo1">
+                    <img src="Content/imgs/EPIC_PHARMA_ridotto.png"/>
+                </div>
+                <ul class="nav-list">
+                    <il>Home</il>
+                    <il>Accedi</il>
+                    <il>Wish List</il>
+                    <il>Carrello</il>
+                </ul>
             </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            <div style="height: 1200px">
+            </div>
+
+            <footer>
+                <div id="div-footer">
+                    <div>
+                        <div>
+                            <img class="logo" src="/Content/img/EPIC_PHARMA_ridotto.png" />
+                        </div>
+                        <div class="div-span">
+                            <span>Via Renato Embriani 46</span>
+                            <span>34047895432</span>
+                            <span>EpicPharm@email.com</span>
+                        </div>
+                        <div>
+                            icone
+                        </div>
+                    </div>
+                    <div>
+                        <h3>CERCA NEL SITO</h3>
+                        <div class="div-span">
+                            <span>Chi siamo</span>
+                            <span>Promozioni del mese</span>
+                            <span>Offerte</span>
+                            <span>Promozioni</span>
+                            <span>I piu venduti</span>
+                            <span>I nostri brand</span>
+                            <span>Contattaci</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>SERVIZIO CLIENTE</h3>
+                        <div class="div-span">
+                            <span>Il mio account</span>
+                            <span>Hai bisogno di aiuto?</span>
+                            <span>COndzioni d'uso del sito</span>
+                            <span>Privacy Policy</span>
+                            <span>Cookie Pilicy</span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                   <p class="copyright">EpicPharm 2023 </p>
+                </div>
+            </footer>
         </div>
     </form>
 </body>
