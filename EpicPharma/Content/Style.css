@@ -35,11 +35,22 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 }
-
-.nav-list il {
-	margin: 0 15px 0 15px;
-	cursor: pointer;
+nav a {
+	text-decoration: none;
+	color: #f2f2f2;
+	
 }
+.nav-icons{
+	display:flex;
+}
+.nav-icons a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 14px 0 14px;
+	cursor:pointer;
+}
+
 /*FOOTER*/
 footer {
 	color: #f2f2f2;
@@ -61,15 +72,26 @@ fotter p {
 .div-span {
 	display: flex;
 	flex-flow: column;
-	justify-content: center;
+	margin: 0 0 0 5vh;
 	cursor: pointer;
 }
 
-	.div-span span {
+.div-span span {
 		margin: 4px 0 4px 0;
-	}
+}
+.footer-icons {
+	font-size: xx-large;
+	margin: 5px 0 0 6vh;
+}
+.footer-icons i {
+	margin: 4px;
+}
 
 .copyright {
 	font-size: 1em;
-	margin-left: 20vh;
+	margin: 0 0 0 10vh;
+}
+/*logo*/
+.logo {
+	height: 120px;
 }
