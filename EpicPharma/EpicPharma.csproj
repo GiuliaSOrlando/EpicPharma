@@ -102,6 +102,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="carello.aspx" />
     <Content Include="Vetrina.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -192,6 +193,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="carello.aspx.cs">
+      <DependentUpon>carello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carello.aspx.designer.cs">
+      <DependentUpon>carello.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carrello.cs" />
     <Compile Include="Vetrina.aspx.cs">
       <DependentUpon>Vetrina.aspx</DependentUpon>

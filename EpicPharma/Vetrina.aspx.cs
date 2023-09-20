@@ -111,6 +111,7 @@ namespace EpicPharma
                     if (elementoSelezionato != null)
                     {
                         elementoSelezionato.Quantita++;
+                   
                     }
                     // Se il prodotto non è presente, viene aggiunto al carrello
                     else
@@ -120,6 +121,7 @@ namespace EpicPharma
                             IdProdotto = ID,
                             Quantita = 1
                         });
+                   ;
                     }
                     }
                 

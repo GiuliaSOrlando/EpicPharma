@@ -11,6 +11,7 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     <asp:Button ID="AddToChart_Button" runat="server" Text="Aggiungi al carrello" OnClick="AddToChart_Button_OnClick" />
+                    
 
                 </ItemTemplate>
             </asp:TemplateField>
