@@ -13,6 +13,7 @@ namespace EpicPharma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            non_disponibile.Visible = false;
             if (!IsPostBack)
             {
                 Prodotto prodotto = new Prodotto();
@@ -43,13 +44,10 @@ namespace EpicPharma
                 //Composizione.InnerHtml = prodotto.Composizione;
 
                 //descrizione.InnerHtml = prodotto.InStock.ToString();
- 
+
                 //DataScadenza.InnerHtml = prodotto.Datascadenza;
 
                 //GruppoMerciologico.InnerHtml= prodotto.GruppoMerciologico;
-
-
-
             }
         }
 
@@ -73,7 +71,6 @@ namespace EpicPharma
                 while (sqlDataReader.Read())
                 {
                     IDUtente = sqlDataReader["IdUtente"].ToString();
-
                 }
                 sqlDataReader.Close();
                 sqlDataReader.Dispose();
@@ -115,19 +112,16 @@ namespace EpicPharma
                 conn.Close();
             }
 
-
             // Se l'utente non è loggato, il carrello viene aggiornato solo a livello di Session
             else
             {
                 // Se il prodotto è già presente, viene aumentata solo la quantità
                 if (elementoSelezionato != null)
                 {
-
                 }
                 // Se il prodotto non è presente, viene aggiunto al carrello
                 else
                 {
-
                 }
             }
         }

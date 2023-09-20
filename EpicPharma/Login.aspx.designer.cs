@@ -15,15 +15,6 @@ namespace EpicPharma
     {
 
         /// <summary>
-        /// Controllo Username.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Username;
-
-        /// <summary>
         /// Controllo Username_Input.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace EpicPharma
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Username_Input;
-
-        /// <summary>
-        /// Controllo Password.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Password;
 
         /// <summary>
         /// Controllo Password_Input.
@@ -51,12 +33,12 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.TextBox Password_Input;
 
         /// <summary>
-        /// Controllo Login_Button.
+        /// Controllo Button_Accedi.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Login_Button;
+        protected global::System.Web.UI.WebControls.Button Button_Accedi;
     }
 }

@@ -13,7 +13,7 @@ namespace EpicPharma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            admin_box.Visible = false;
         }
 
         protected void SignUp_Button_OnClick(object sender, EventArgs e)
@@ -23,12 +23,11 @@ namespace EpicPharma
 
             try
             {
-                bool boolConfirmation;                
+                bool boolConfirmation;
                 string adminConfirmationString = "42istheanswer";
                 if (Admin_Input.Text == adminConfirmationString)
                 {
                     boolConfirmation = true;
-
                 }
                 else
                 {
@@ -46,17 +45,23 @@ namespace EpicPharma
                 cmd.Parameters.AddWithValue("Password", Password_Input.Text);
                 cmd.Parameters.AddWithValue("Admin", boolConfirmation);
 
-
                 int inserimentoEffettuato = cmd.ExecuteNonQuery();
 
                 if (inserimentoEffettuato > 0)
                 {
                     Response.Write("Inserimento effettuato con successo");
                 }
-
             }
             catch (Exception ex) { }
             finally { conn.Close(); }
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox1.Checked)
+            {
+                admin_box.Visible = true;
+            }
         }
     }
 }

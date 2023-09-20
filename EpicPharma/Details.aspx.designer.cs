@@ -15,6 +15,15 @@ namespace EpicPharma
     {
 
         /// <summary>
+        /// Controllo Image1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// Controllo nomeProdotto.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,67 @@ namespace EpicPharma
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl nomeProdotto;
 
         /// <summary>
-        /// Controllo Image1.
+        /// Controllo Prezzo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
+
+        /// <summary>
+        /// Controllo Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// Controllo quantita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl quantita;
+
+        /// <summary>
+        /// Controllo Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+
+        /// <summary>
+        /// Controllo Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Controllo disponibile.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl disponibile;
+
+        /// <summary>
+        /// Controllo non_disponibile.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl non_disponibile;
 
         /// <summary>
         /// Controllo descrizione.
@@ -42,21 +105,39 @@ namespace EpicPharma
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl descrizione;
 
         /// <summary>
-        /// Controllo InStock.
+        /// Controllo Brand.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl InStock;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Brand;
 
         /// <summary>
-        /// Controllo Button1.
+        /// Controllo Modalita.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Modalita;
+
+        /// <summary>
+        /// Controllo Composizione.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Composizione;
+
+        /// <summary>
+        /// Controllo DataScadenza.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DataScadenza;
     }
 }

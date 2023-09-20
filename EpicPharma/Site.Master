@@ -26,7 +26,7 @@
                     <a href="Default.aspx"><i class="bi bi-house"></i>Home</a>
                     <a href="Login.aspx"><i class="bi bi-person"></i>Accedi</a>
                     <a><i class="bi bi-heart"></i>Wishlist</a>
-                    <a><i class="bi bi-cart2"></i>Carrello</a>
+                    <a href="carello.aspx"><i class="bi bi-cart2"></i>Carrello</a>
                     
 
                 </div>
