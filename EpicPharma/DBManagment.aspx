@@ -26,4 +26,5 @@
     <asp:Label ID="GruppoMerciologico" Text="Gruppo merciologico" runat="server"></asp:Label>
     <asp:TextBox ID="GruppoMerciologico_Input" runat="server"></asp:TextBox>
     <asp:Button ID="AddToDB_Button" runat="server" Text="Aggiungi" OnClick="AddToDB_Button_OnClick" />
+
 </asp:Content>

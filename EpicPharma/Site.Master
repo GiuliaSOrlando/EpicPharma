@@ -6,25 +6,39 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="Content/Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div>
             <nav>
                 <div class="div-logo1">
-                    <img src="Content/img/EPIC_PHARMA_ridotto.png"/>
+                    <img class="logo" src="Content/img/EPIC_PHARMA_ridotto.png" />
                 </div>
-                <ul class="nav-list">
-                    <il>Home</il>
-                    <il>Accedi</il>
-                    <il>Wish List</il>
-                    <il>Carrello</il>
-                </ul>
+                <div class="nav-icons">
+                    <a href="Default.aspx"><i class="bi bi-house"></i>Home</a>
+                    <a href="Login.aspx"><i class="bi bi-person"></i>Accedi</a>
+                    <a><i class="bi bi-heart"></i>Wishlist</a>
+                    <a><i class="bi bi-cart2"></i>Carrello</a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -35,37 +49,39 @@
                 <div id="div-footer">
                     <div>
                         <div>
-                            <img src="/Content/img/EPIC_PHARMA_ridotto.png" />
+                            <img class="logo" src="/Content/img/EPIC_PHARMA_ridotto.png" />
                         </div>
                         <div class="div-span">
                             <span>Via Renato Embriani 46</span>
-                            <span>34047895432</span>
-                            <span>EpicPharm@email.com</span>
+                            <span><i class="bi bi-telephone"></i>34047895432</span>
+                            <span><i class="bi bi-envelope"></i>EpicPharm@email.com</span>
                         </div>
-                        <div>
-                            icone
+                        <div class="footer-icons">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-telegram"></i>
                         </div>
                     </div>
                     <div>
                         <h3>CERCA NEL SITO</h3>
                         <div class="div-span">
-                            <span>Chi siamo</span>
-                            <span>Promozioni del mese</span>
-                            <span>Offerte</span>
-                            <span>Promozioni</span>
-                            <span>I piu venduti</span>
-                            <span>I nostri brand</span>
-                            <span>Contattaci</span>
+                            <span><i class="bi bi-chevron-right"></i>Chi siamo</span>
+                            <span><i class="bi bi-chevron-right"></i>Promozioni del mese</span>
+                            <span><i class="bi bi-chevron-right"></i>Offerte</span>
+                            <span><i class="bi bi-chevron-right"></i>Promozioni</span>
+                            <span><i class="bi bi-chevron-right"></i>I piu venduti</span>
+                            <span><i class="bi bi-chevron-right"></i>I nostri brand</span>
+                            <span><i class="bi bi-chevron-right"></i>Contattaci</span>
                         </div>
                     </div>
                     <div>
                         <h3>SERVIZIO CLIENTE</h3>
                         <div class="div-span">
-                            <span>Il mio account</span>
-                            <span>Hai bisogno di aiuto?</span>
-                            <span>COndzioni d'uso del sito</span>
-                            <span>Privacy Policy</span>
-                            <span>Cookie Pilicy</span>
+                            <span><i class="bi bi-chevron-right"></i>Il mio account</span>
+                            <span><i class="bi bi-chevron-right"></i>Hai bisogno di aiuto?</span>
+                            <span><i class="bi bi-chevron-right"></i>Condzioni d'uso del sito</span>
+                            <span><i class="bi bi-chevron-right"></i>Privacy Policy</span>
+                            <span><i class="bi bi-chevron-right"></i>Cookie Pilicy</span>
                         </div>
                     </div>
                 </div>

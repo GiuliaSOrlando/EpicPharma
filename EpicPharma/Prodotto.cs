@@ -51,6 +51,8 @@ namespace EpicPharma
             GruppoMerciologico = gruppoMerciologico;
         }
 
+        public List<Prodotto> listaProdottiDB = new List<Prodotto>();
+
         public void setInfoIntoDB()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString.ToString();
@@ -96,17 +98,21 @@ namespace EpicPharma
 
             while (sqlDataReader.Read())
             {
-                int IdProdotto = Convert.ToInt32(sqlDataReader["IdProdotto"].ToString());
-                string NomeProdotto = sqlDataReader["Nome"].ToString();
-                decimal PrezzoProdotto = Convert.ToDecimal(sqlDataReader["Prezzo"].ToString());
-                string DescrizioneProdotto = sqlDataReader["Descrizione"].ToString();
-                string CategoriaProdotto = sqlDataReader["Categoria"].ToString();
-                string BrandProdotto = sqlDataReader["Brand"].ToString();
-                string ModalitaProdotto = sqlDataReader["Modalita"].ToString();
-                string ComposizioneProdotto = sqlDataReader["Composizione"].ToString();
-                string ImmagineProdotto = sqlDataReader["Immagine"].ToString();
-                DateTime DataScadenzaProdotto = Convert.ToDateTime(sqlDataReader["DataScadenza"].ToString());
-                bool InStockProdotto = Convert.ToBoolean(sqlDataReader["InStock"].ToString());
+                Prodotto prodotto = new Prodotto
+                {
+                    ID = Convert.ToInt32(sqlDataReader["IdProdotto"].ToString()),
+                    Nome = sqlDataReader["Nome"].ToString(),
+                    Prezzo = Convert.ToDecimal(sqlDataReader["Prezzo"].ToString()),
+                    Descrizione = sqlDataReader["Descrizione"].ToString(),
+                    Categoria = sqlDataReader["Categoria"].ToString(),
+                    Brand = sqlDataReader["Brand"].ToString(),
+                    Modalita = sqlDataReader["Modalita"].ToString(),
+                    Composizione = sqlDataReader["Composizione"].ToString(),
+                    Immagine = sqlDataReader["Immagine"].ToString(),
+                    Datascadenza = Convert.ToDateTime(sqlDataReader["DataScadenza"].ToString()),
+                    InStock = Convert.ToBoolean(sqlDataReader["InStock"].ToString())
+                };
+                listaProdottiDB.Add(prodotto);
             }
 
             conn.Close();
