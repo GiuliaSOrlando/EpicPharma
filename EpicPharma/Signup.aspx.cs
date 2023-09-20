@@ -13,7 +13,7 @@ namespace EpicPharma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            admin_box.Visible = false;
         }
 
         protected void SignUp_Button_OnClick(object sender, EventArgs e)
@@ -55,6 +55,19 @@ namespace EpicPharma
             }
             catch (Exception ex) { }
             finally { conn.Close(); }
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CheckBox1.Checked)
+            {
+                admin_box.Visible = true;
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            admin_box.Visible = true;
         }
     }
 }

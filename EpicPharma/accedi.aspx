@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="EpicPharma.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="accedi.aspx.cs" Inherits="EpicPharma.accedi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,14 +9,14 @@
                 <p>Informazioni di accesso</p>
             </div>
             <div class="mt-4">
-                <p>Il tuo username</p>
-                <asp:TextBox ID="Username_Input" CssClass="input_area" runat="server" placeholder="Inserisci il tuo Username"></asp:TextBox>
+                <p>La tua email</p>
+                <asp:TextBox ID="email" CssClass="input_area" runat="server" TextMode="Email" placeholder="La tua email"></asp:TextBox>
             </div>
             <div>
                 <p>La tua password</p>
-                <asp:TextBox ID="Password_Input"  CssClass="input_area" runat="server" TextMode="Password" placeholder="Inserisci la tua password"></asp:TextBox>
+                <asp:TextBox ID="password"  CssClass="input_area" runat="server" TextMode="Password" placeholder="La tua password"></asp:TextBox>
             </div>
-            <asp:Button ID="Button_Accedi" CssClass="myButton" runat="server" Text="ACCEDI" OnClick="Login_Button_OnClick"/>
+            <asp:Button ID="Button_Accedi" CssClass="myButton" runat="server" Text="ACCEDI" OnClick="Button_Accedi_Click"/>
         </div>
 
         <div id="divisorio"></div>
@@ -25,7 +25,7 @@
             <h1>Nuovo Cliente</h1>
             <p>Non sei ancora registrato?</p>
             <p>Ti ricordiamo che la registrazione è semplice e gratuita.</p>
-            <h3 class="mt-4">VANTAGGI PER GLI UTENTI EPICPHARM</h3>
+            <h3 class="mt-4">VANTAGGI PER GLI UTENTI DI EPICPHARMA</h3>
             <p>- Checkout veloce</p>
             <p>- Salvare indirizzi di spedizione multipli</p>
             <p>- Vedere e tracciare i tuoi ordini e altro ancora</p>

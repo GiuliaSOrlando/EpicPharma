@@ -11,26 +11,26 @@ namespace EpicPharma
 {
 
 
-    public partial class Login
+    public partial class accedi
     {
 
         /// <summary>
-        /// Controllo Username_Input.
+        /// Controllo email.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Username_Input;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// Controllo Password_Input.
+        /// Controllo password.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password_Input;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
         /// Controllo Button_Accedi.

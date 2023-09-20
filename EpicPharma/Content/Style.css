@@ -150,3 +150,118 @@ fotter p {
     font-size: 20px;
     cursor: pointer;
 }
+
+
+
+/*PAGINA ACCEDI*/
+#contenitore_login {
+    margin: 150px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+}
+#divisorio {
+    border-left: black solid 2px;
+    height: 500px;
+}
+#accedi p {
+    margin: 3px 3px 3px 3px
+}
+.input_area {
+    margin:10px;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    padding: 8px 80px 8px 14px;
+}
+
+
+/*button*/
+.myButton {
+    margin: 20px 0 0 0;
+    box-shadow: 3px 3px 2px 0px rgba(154, 154, 154, 1.2);
+    background: rgb(138,200,124);
+    background: linear-gradient(150deg, rgba(138,200,124,1) 53%, rgba(187,215,181,1) 92%);
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 46px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #e1e2ed;
+}
+
+.myButton:hover {
+    background: rgb(138,200,124);
+    background: linear-gradient(150deg, rgba(187,215,181,1)23%, rgba(138,200,124,1) 77% );
+ }
+
+.myButton:active {
+   position: relative;
+   top: 1px;
+ }
+
+
+
+/*Registrati*/
+#contenitore_registrati {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40%;
+    margin-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.div_registrazione {
+    display: flex;
+}
+.div_registrazione p {
+    margin: 3px 3px 3px 3px;
+}
+.div_registrazione div{
+    margin: 5px 20px;
+}
+
+#contenitore_registrati h1, #contenitore_registrati h2, #contenitore_registrati h3 {
+    color: #20336a;
+}
+
+
+/*Dettagli*/
+
+.main_img {
+    height: 450px;
+    width: 550px;
+
+}
+#contenitore_dettagli_top {
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 0 40px 0;
+}
+.btn_qta {
+    margin: 0 6px;
+    text-align: center;
+    color: #f2f2f2;
+    background: rgb(138,200,124);
+    border:none;
+    border-radius: 100%;
+    box-shadow: 3px 3px 2px 0px rgba(154, 154, 154, 1.2);
+    width: 30px;
+    height: 30px;
+}
+    .btn_qta:hover {
+        background: rgb(138,200,124);
+        background: linear-gradient(150deg, rgba(187,215,181,1)23%, rgba(138,200,124,1) 77% );
+    }
+.div_qta {
+    display:flex;
+    align-items:center;
+    margin: 5px 0 5px 0;
+}
+#cotenitore_dettagli_bottom {
+    margin: 80px 0 40px 80px;
+}

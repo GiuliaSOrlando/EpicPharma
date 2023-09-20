@@ -15,15 +15,6 @@ namespace EpicPharma
     {
 
         /// <summary>
-        /// Controllo Nome.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Nome;
-
-        /// <summary>
         /// Controllo Nome_Input.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace EpicPharma
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Nome_Input;
-
-        /// <summary>
-        /// Controllo Cognome.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Cognome;
 
         /// <summary>
         /// Controllo Cognome_Input.
@@ -51,15 +33,6 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.TextBox Cognome_Input;
 
         /// <summary>
-        /// Controllo Username.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Username;
-
-        /// <summary>
         /// Controllo Username_Input.
         /// </summary>
         /// <remarks>
@@ -67,15 +40,6 @@ namespace EpicPharma
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Username_Input;
-
-        /// <summary>
-        /// Controllo Email.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Email;
 
         /// <summary>
         /// Controllo Email_Input.
@@ -87,15 +51,6 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.TextBox Email_Input;
 
         /// <summary>
-        /// Controllo Password.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Password;
-
-        /// <summary>
         /// Controllo Password_Input.
         /// </summary>
         /// <remarks>
@@ -105,40 +60,31 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.TextBox Password_Input;
 
         /// <summary>
-        /// Controllo ConfirmPassword.
+        /// Controllo Conferma_Password_Input.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox Conferma_Password_Input;
 
         /// <summary>
-        /// Controllo ConfirmPassword_Input.
+        /// Controllo CheckBox1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmPassword_Input;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
 
         /// <summary>
-        /// Controllo CompareValidator1.
+        /// Controllo admin_box.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-
-        /// <summary>
-        /// Controllo Admin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Admin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin_box;
 
         /// <summary>
         /// Controllo Admin_Input.
@@ -150,12 +96,12 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.TextBox Admin_Input;
 
         /// <summary>
-        /// Controllo SignUp_Button.
+        /// Controllo Button1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SignUp_Button;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }
