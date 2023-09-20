@@ -102,6 +102,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\Aboca.jpg" />
+    <Content Include="Content\img\Multicentrum.jpg" />
+    <Content Include="Content\img\omegatre.jpg" />
+    <Content Include="Content\img\Vetoquinol1.jpg" />
     <Content Include="Vetrina.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -155,6 +159,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\img\lipikar.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
