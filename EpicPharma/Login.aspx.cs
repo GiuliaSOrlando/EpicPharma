@@ -34,14 +34,15 @@ namespace EpicPharma
 
             if (count > 0)
             {
-                string script = "sei loggato";
+                string script = "Sei loggato";
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", script);
+                FormsAuthentication.SetAuthCookie(username, false);
                 Response.Redirect("Default.aspx");
             }
             else
             {
-                string script = "non sei ancora registrato";
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", script);
+                string script2 = "Non sei ancora registrato";
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", script2);
                 Response.Redirect("Signup.aspx");
             }
         }

@@ -28,6 +28,7 @@ namespace EpicPharma
                 if (Admin_Input.Text == adminConfirmationString)
                 {
                     boolConfirmation = true;
+
                 }
                 else
                 {
@@ -52,6 +53,7 @@ namespace EpicPharma
                 {
                     Response.Write("Inserimento effettuato con successo");
                 }
+
             }
             catch (Exception ex) { }
             finally { conn.Close(); }
