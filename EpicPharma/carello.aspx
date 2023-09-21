@@ -22,11 +22,11 @@
                             <tr>
                                 <td>
                                     <div class="item-photo">
-                                        <img src="Content/img/<%# Item.Immagine %>" alt="Immagine">
-                                        <div class="item-name"><%# Item.Nome %></div>
+                                        <img runat="server" src="Content/img/<%# Item.Immagine %>" alt="Immagine">
+                                        <div runat="server" class="item-name"><%# Item.Nome%></div>
                                     </div>
                                 </td>
-                                <td><%# Item.Prezzo %></td>
+                                <td runat="server"><%# Item.Prezzo %></td>
                                 <td>
                                     <div class="quantity-controls">
                                         <div class="quantity-button">+</div>

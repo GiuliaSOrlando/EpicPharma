@@ -60,7 +60,7 @@
                                     </asp:HyperLink>
                                 </h5>
 
-                                <asp:Label ID="ProductPrice" runat="server" CssClass="my-3 fw-bold" Text="<%# Item.Prezzo%>"></asp:Label>
+                                <asp:Label ID="ProductPrice" runat="server" CssClass="my-3 fw-bold" Text='<%# Item.Prezzo.ToString("C2") %>'></asp:Label>
 
                                 <asp:Button runat="server" ID="AddToChart_Button" CssClass="myButton" Text="Aggiungi al carrello" OnClick="AddToChart_Button_OnClick"
                                     CommandArgument="<%#Item.ID %>" />

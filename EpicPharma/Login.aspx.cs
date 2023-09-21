@@ -37,7 +37,7 @@ namespace EpicPharma
                 string script = "Sei loggato";
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", script);
                 FormsAuthentication.SetAuthCookie(username, false);
-                Response.Redirect("Default.aspx");
+                Response.Redirect("DBManagment.aspx");
             }
             else
             {

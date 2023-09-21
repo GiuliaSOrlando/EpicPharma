@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +8,7 @@ namespace EpicPharma
 {
     public partial class carello : System.Web.UI.Page
     {
+        List<string> prodottiDalDB = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         
         {
@@ -43,7 +45,6 @@ namespace EpicPharma
                         SqlCommand cmdSelezione = new SqlCommand(querySelezione, conn);
                         cmdSelezione.Parameters.AddWithValue("@IdUtente", IDUtente);
 
-
                         SqlDataReader sqlSelezione = cmdSelezione.ExecuteReader();
 
                         DataTable cartData = new DataTable();
@@ -51,15 +52,23 @@ namespace EpicPharma
                         cartData.Columns.Add("Prezzo");
                         cartData.Columns.Add("Immagine");
 
-                        
-                        string Idprodotto = sqlSelezione["IdProdotto"].ToString();
-                        string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";
-                        SqlCommand cmdProdotto = new SqlCommand(queryProdotto, conn);
-                        cmdProdotto.Parameters.AddWithValue("@IdProdotto", Idprodotto);
+                        while(sqlSelezione.Read())
+                        {
+                            string IDProdotto = sqlSelezione["IdProdotto"].ToString();
+                            prodottiDalDB.Add(IDProdotto);
+                        }
 
-                        SqlDataReader sqlProdotto = cmdProdotto.ExecuteReader();
+                        sqlSelezione.Close();
 
-                        while (sqlProdotto.Read())
+                        foreach(string IdProdotto in prodottiDalDB)
+                        {
+                            string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";
+                            SqlCommand cmdProdotto = new SqlCommand(queryProdotto, conn);
+                            cmdProdotto.Parameters.AddWithValue("@IdProdotto", IdProdotto);
+
+                            SqlDataReader sqlProdotto = cmdProdotto.ExecuteReader();
+
+                            while (sqlProdotto.Read())
                             {
                                 string NomeProdotto = sqlProdotto["Nome"].ToString();
                                 decimal PrezzoProdotto = Convert.ToDecimal(sqlProdotto["Prezzo"]);
@@ -68,15 +77,13 @@ namespace EpicPharma
                                 DataRow newRow = cartData.NewRow();
                                 newRow["Nome"] = NomeProdotto;
                                 newRow["Prezzo"] = PrezzoProdotto;
-                                newRow["Immagine"] = ImmagineProdotto; 
+                                newRow["Immagine"] = ImmagineProdotto;
                                 cartData.Rows.Add(newRow);
                             }
-
                             sqlProdotto.Close();
-
-                        sqlSelezione.Close();
-
-                        conn.Close();
+                        }
+                        
+                          conn.Close();
 
                         CartRepeater.DataSource = cartData;
                         CartRepeater.DataBind();
