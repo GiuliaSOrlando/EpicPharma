@@ -1,28 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="EpicPharma.Details" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="contenitore_dettagli_top">
         <div>
-         <asp:Image ID="Image1" runat="server" CssClass="main_img"/>
+            <asp:Image ID="Image1" runat="server" CssClass="main_img" />
         </div>
         <div>
             <h1 id="nomeProdotto" runat="server">Titolo del prodotto</h1>
             <hr />
             <div>
                 <div>
-                    <p>Prezzo Epicpharm</p>
-                    <p id="Prezzo" runat="server">€ 16,80</p>
+                    <p>Prezzo EpicPharma</p>
+                    <p id="Prezzo" runat="server"></p>
                 </div>
+
                 <div>
                     <div class="div_qta">
                         <span>QTÀ</span>
-                        <asp:Button ID="Button2" runat="server" Text="+" CssClass="btn_qta" />
+                        <asp:Button ID="Button2" runat="server" Text="-" CssClass="btn_qta" />
                         <span id="quantita" runat="server">1</span>
-                        <asp:Button ID="Button3" runat="server" Text="-" CssClass="btn_qta" />
+                        <asp:Button ID="btnAumenta" runat="server" Text="+" CssClass="btn_qta" OnClick="btnAumenta_Click"/>
                     </div>
-                    <asp:Button ID="Button1" runat="server" Text="AGGIUNGI AL CARRELLO" CssClass="myButton" OnClick="Button1_Click" />
+                    <asp:Button runat="server" ID="AddToChart_Button" CssClass="myButton" Text="Aggiungi al carrello" OnClick="AddToChart_Button_OnClick" />
                 </div>
+
                 <hr />
                 <div class="d-flex justify-content-between">
                     <span>Disponibilita:</span>
@@ -40,7 +43,7 @@
     <hr />
     <div id="cotenitore_dettagli_bottom">
         <h2>Descrizione prodotto</h2>
-        <p id="descrizione" runat="server">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p id="Descrizione" runat="server"></p>
         <h4>Casa farmaceutica</h4>
         <p id="Brand" runat="server"></p>
         <h4>Modalita d'uso</h4>

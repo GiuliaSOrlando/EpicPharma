@@ -60,22 +60,22 @@ namespace EpicPharma
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl quantita;
 
         /// <summary>
-        /// Controllo Button3.
+        /// Controllo btnAumenta.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button btnAumenta;
 
         /// <summary>
-        /// Controllo Button1.
+        /// Controllo AddToChart_Button.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button AddToChart_Button;
 
         /// <summary>
         /// Controllo disponibile.
@@ -96,13 +96,13 @@ namespace EpicPharma
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl non_disponibile;
 
         /// <summary>
-        /// Controllo descrizione.
+        /// Controllo Descrizione.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl descrizione;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Descrizione;
 
         /// <summary>
         /// Controllo Brand.

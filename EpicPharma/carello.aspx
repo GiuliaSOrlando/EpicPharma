@@ -17,48 +17,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Primo oggetto -->
-                    <tr>
-                        <td>
-                            <div class="item-photo">
-                                <img src="https://www.efarma.com/media/catalog/product/0/3/035618026.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=466&width=466&canvas=466:466" alt="Immagine">
-                                <div class="item-name">Moment Act</div>
-                            </div>
-                        </td>
-                        <td>10.00 €</td>
-                        <td>
-                            <div class="quantity-controls">
-                                <div class="quantity-button">+</div>
-                                <div class="quantity-square m-0">
-                                    <div class="quantity-value">2</div>
-                                </div>
-                                <div class="quantity-button">-</div>
-                            </div>
-                        </td>
-                        <td>10.00 €</td>
-                        <td><i class="bi bi-trash"></i></td>
-                    </tr>
-                    <!-- Secondo oggetto -->
-                    <tr>
-                        <td>
-                            <div class="item-photo">
-                                <img src="https://www.farmainforma.net/4157-thickbox_default/Tachifludec-Gusto-Limone-e-Miele.jpg" alt="Immagine">
-                                <div class="item-name">Tachifludec</div>
-                            </div>
-                        </td>
-                        <td>20.00 €</td>
-                        <td>
-                            <div class="quantity-controls">
-                                <div class="quantity-button">+</div>
-                                <div class="quantity-square m-0">
-                                    <div class="quantity-value">1</div>
-                                </div>
-                                <div class="quantity-button">-</div>
-                            </div>
-                        </td>
-                        <td>20.00 €</td>
-                        <td><i class="bi bi-trash"></i></td>
-                    </tr>
+                <asp:Repeater ID="CartRepeater" runat="server">
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <div class="item-photo">
+                                        <img src='<%# Eval("Immagine") %>' alt="Immagine">
+                                        <div class="item-name"><%# Eval("Nome") %></div>
+                                    </div>
+                                </td>
+                                <td><%# Eval("Prezzo","{0:C}") %></td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <div class="quantity-button">+</div>
+                                        <div class="quantity-square m-0">
+                                            <div class="quantity-value"><%# Eval("Quantity") %></div>
+                                        </div>
+                                        <div class="quantity-button">-</div>
+                                    </div>
+                                </td>
+                                <td><%# Eval("Subtotal", "{0:C}") %></td>
+                                <td><i class="bi bi-trash"></i></td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </tbody>
             </table>
         </div>
