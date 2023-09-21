@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -52,6 +53,9 @@ nav {
         cursor: pointer;
     }
 
+        .nav-icons a i {
+            font-size: 1.6em;
+        }
 /*FOOTER*/
 footer {
     color: #f2f2f2;
@@ -266,12 +270,12 @@ fotter p {
     box-shadow: 3px 3px 2px 0px rgba(154, 154, 154, 1.2);
     background: rgb(138,200,124);
     background: linear-gradient(150deg, rgba(138,200,124,1) 53%, rgba(187,215,181,1) 92%);
-    border-radius: 20px;
+    border-radius: 6px;
     border: none;
     display: inline-block;
     cursor: pointer;
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     padding: 7px 46px;
     text-decoration: none;
@@ -379,4 +383,220 @@ fotter p {
 a {
     text-decoration: none;
     color: black;
+}
+
+/*admin page*/
+
+#contenitore_admin {
+    margin: 120px 0 0 0;
+    text-align: center
+}
+
+    #contenitore_admin p {
+        margin: 3px 3px;
+    }
+
+#contenitore_input_prodotti {
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+#Immagine_Input {
+    overflow: hidden;
+}
+
+.div_input_admin {
+    text-align: start;
+    margin: 40px 0 0 30px
+}
+
+#dateStandard {
+    margin: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px 80px 8px 14px;
+}
+/*checkbox adminpage*/
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: 0px;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #8AC87C;
+}
+
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control-checkbox .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.control-checkbox input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+
+.control-checkbox input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+
+/*WISHLIST*/
+
+#contenitore_wishlist {
+    margin: 100px 40px 80px 40px;
+}
+
+.img_wishlist {
+    width: 60px;
+    height: 60px;
+}
+
+/*grid*/
+
+.mydatagrid {
+    width: 100%;
+    box-shadow: 3px 3px 3px 3px rgba(154, 154, 154, 1.2);
+    border-radius: 15px;
+    border: none;
+    min-width: 80%;
+}
+
+.header {
+    background-color: rgb(53,73,132);
+    font-family: Arial;
+    color: White;
+    border: none 0px transparent;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.rows {
+    background-color: #f2f2f2;
+    font-family: Arial;
+    font-size: 14px;
+    color: #000;
+    min-height: 25px;
+    text-align: center;
+    border: none 0px transparent;
+}
+
+    .rows:hover {
+        background-color: #95a9e1;
+        font-family: Arial;
+        color: #fff;
+        text-align: center;
+    }
+
+.mydatagrid td {
+    padding: 5px;
+}
+
+.mydatagrid th {
+    padding: 5px;
 }
