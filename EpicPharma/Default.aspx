@@ -41,8 +41,6 @@
 
    <%-- INIZIO CARD--%>
 
-
-  
     <div class="container py-3" >
         <h2 class="text-center" > Prodotto del momento</h2>
         <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
