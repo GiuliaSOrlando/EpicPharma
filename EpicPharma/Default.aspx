@@ -44,7 +44,118 @@
 
   
     <div class="container py-3" >
-        <h2 class="text-center" > Prodotto del momento</h2>
+        <h2 class="text-center mt-3" > Categoria</h2>
+
+       <%-- Inizio Ctegory--%>
+
+        
+        <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
+
+
+            <a href="#"  class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Automedicazione.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                        <h5 class="catetext">Automedicazione</h5>                    
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Personal care.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                        <h5 class="catetext">Personal <br /> Care </h5> 
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Prima infanzia.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                       <h5 class="catetext">Prima <br /> Infanzia</h5> 
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Integratori.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                        <h5 class="catetext">Integratori</h5> 
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Presidi Medicali.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                       <h5 class="catetext">Presidi <br /> Medicali </h5> 
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+                <div class="card text-bg-dark">
+                    <img src="Content/img/Alimentazione.jpeg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="DarkMode" ></div>
+                     <h5 class="catetext">Alimentazione</h5> 
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+      <%--  <section class="category">
+            <div class="category-box">
+                <h3>Automedicazione</h3>
+            </div>
+            <div class="category-box">
+                <h3>Personal <br />
+                    care
+                </h3>
+            </div>
+            <div class="category-box">
+                <h3>Prima <br /> Infanzia </h3>
+            </div>
+            <div class="category-box">
+                <h3>Integratori</h3>
+            </div>
+            <div class="category-box">
+                <h3>Presidi <br /> Medical </h3>
+            </div>
+            <div class="category-box">
+                <h3>Alimentazione</h3>
+            </div>
+        </section>--%>
+  
+
+
+
+        <%--====--%>
+
         <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
 
 

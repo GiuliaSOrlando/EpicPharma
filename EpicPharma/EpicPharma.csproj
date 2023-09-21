@@ -104,8 +104,14 @@
   <ItemGroup>
     <Content Include="carello.aspx" />
     <Content Include="Content\img\Aboca.jpg" />
+    <Content Include="Content\img\Alimentazione.jpeg" />
+    <Content Include="Content\img\Automedicazione.jpeg" />
+    <Content Include="Content\img\Integratori.jpeg" />
     <Content Include="Content\img\Multicentrum.jpg" />
     <Content Include="Content\img\omegatre.jpg" />
+    <Content Include="Content\img\Personal care.jpeg" />
+    <Content Include="Content\img\Presidi Medicali.jpeg" />
+    <Content Include="Content\img\Prima infanzia.jpeg" />
     <Content Include="Content\img\Vetoquinol1.jpg" />
     <Content Include="Vetrina.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
