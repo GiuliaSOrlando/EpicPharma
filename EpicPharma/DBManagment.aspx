@@ -59,13 +59,13 @@
             <div class="form-group">
                 <label class="active" for="dateStandard">
                     <p>Data di scadenza</p>
-                    <input type="date" id="dateStandard" name="dateStandard">
+                    <asp:TextBox TextMode="Date" ID="DataScadenza_Input" name="dateStandard" runat="server"></asp:TextBox>
                 </label>
                 
             </div>
             <div class="mt-5">
                 <label class="control control-checkbox"> Presente in magazzino
-                    <input type="checkbox" checked="checked" />
+                    <asp:CheckBox ID="InStock_Input" runat="server" />
                     <div class="control_indicator"></div>
                 </label>
             </div>

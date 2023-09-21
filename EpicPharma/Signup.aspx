@@ -38,7 +38,10 @@
             </div>
         </div>
         <div>
-            <asp:CheckBox ID="CheckBox1" runat="server" Text="Registrati come amministratore" OnCheckedChanged="CheckBox1_CheckedChanged" AutoPostBack="true"/>
+            <label class="control control-checkbox">
+                <asp:CheckBox ID="CheckBox1" runat="server" Text="Registrati come amministratore" OnCheckedChanged="CheckBox1_CheckedChanged" AutoPostBack="true" />
+                <div class="control_indicator"></div>
+            </label>
             <div id="admin_box" runat="server">
                 <asp:TextBox ID="Admin_Input" CssClass="input_area" runat="server" placeholder="Inserisci codice di autentificazione"></asp:TextBox>
             </div>

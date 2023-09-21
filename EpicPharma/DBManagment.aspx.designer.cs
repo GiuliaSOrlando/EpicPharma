@@ -96,6 +96,24 @@ namespace EpicPharma
         protected global::System.Web.UI.WebControls.FileUpload Immagine_Input;
 
         /// <summary>
+        /// Controllo DataScadenza_Input.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DataScadenza_Input;
+
+        /// <summary>
+        /// Controllo InStock_Input.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox InStock_Input;
+
+        /// <summary>
         /// Controllo AddToDB_Button.
         /// </summary>
         /// <remarks>

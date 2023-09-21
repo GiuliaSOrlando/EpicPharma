@@ -38,7 +38,76 @@
             </button>
         </div>
     </div>
+        <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
 
+
+        <a href="#"  class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Automedicazione.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                    <h5 class="catetext">Automedicazione</h5>                    
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Personal care.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                    <h5 class="catetext">Personal <br /> Care </h5> 
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Prima infanzia.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                   <h5 class="catetext">Prima <br /> Infanzia</h5> 
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Integratori.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                    <h5 class="catetext">Integratori</h5> 
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Presidi Medicali.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                   <h5 class="catetext">Presidi <br /> Medicali </h5> 
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
+
+            <div class="card text-bg-dark">
+                <img src="Content/img/Alimentazione.jpeg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <div class="DarkMode" ></div>
+                 <h5 class="catetext">Alimentazione</h5> 
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
     <%-- INIZIO CARD--%>
 
     <div class="container py-3">
@@ -82,3 +151,7 @@
 
 
 </asp:Content>
+<%-- Inizio Ctegory--%>
+
+        
+       

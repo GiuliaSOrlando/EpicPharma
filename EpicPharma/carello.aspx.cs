@@ -71,7 +71,7 @@ namespace EpicPharma
 
                             while (sqlProdotto.Read())
                             {
-                                prodottiDal.Add(sqlProdotto["idProdotto"].ToString());
+                                prodottiDalDB.Add(sqlProdotto["idProdotto"].ToString());
                             }
                             sqlProdotto.Close();
                         }

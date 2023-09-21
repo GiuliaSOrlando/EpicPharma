@@ -600,3 +600,38 @@ a {
 .mydatagrid th {
     padding: 5px;
 }
+/* Style Category */
+
+.catetext {
+    width: 100%;
+    text-shadow: -2px 2px 4px #000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 100;
+    color: yellow;
+}
+
+.card-img {
+    width: 100%;
+    height: 5rem;
+}
+
+.DarkMode {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    transition: all ease-in-out 200ms;
+}
+
+a {
+    position: relative
+}
+
+    a:hover .DarkMode {
+        opacity: 0;
+    }
