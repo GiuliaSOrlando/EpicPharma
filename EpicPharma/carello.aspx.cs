@@ -8,9 +8,11 @@ namespace EpicPharma
 {
     public partial class carello : System.Web.UI.Page
     {
-        List<string> prodottiDalDB = new List<string>();
+        private List<string> prodottiDalDB = new List<string>();
+        private List<string> prodottiDal = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
-        
+
         {
             if (!IsPostBack)
             {
@@ -27,14 +29,13 @@ namespace EpicPharma
                         string queryUtente = "SELECT IdUtente FROM Utenti WHERE Username=@Username";
                         SqlCommand cmdUtente = new SqlCommand(queryUtente, conn);
                         cmdUtente.Parameters.AddWithValue("@Username", username);
-                        
+
                         SqlDataReader sqlDataReader = cmdUtente.ExecuteReader();
                         string IDUtente = "";
 
                         while (sqlDataReader.Read())
                         {
                             IDUtente = sqlDataReader["IdUtente"].ToString();
-
                         }
 
                         sqlDataReader.Close();
@@ -52,15 +53,15 @@ namespace EpicPharma
                         cartData.Columns.Add("Prezzo");
                         cartData.Columns.Add("Immagine");
 
-                        while(sqlSelezione.Read())
+                        while (sqlSelezione.Read())
                         {
                             string IDProdotto = sqlSelezione["IdProdotto"].ToString();
                             prodottiDalDB.Add(IDProdotto);
                         }
 
                         sqlSelezione.Close();
-
-                        foreach(string IdProdotto in prodottiDalDB)
+                        string id = "";
+                        foreach (string IdProdotto in prodottiDalDB)
                         {
                             string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";
                             SqlCommand cmdProdotto = new SqlCommand(queryProdotto, conn);
@@ -70,24 +71,19 @@ namespace EpicPharma
 
                             while (sqlProdotto.Read())
                             {
-                                string NomeProdotto = sqlProdotto["Nome"].ToString();
-                                decimal PrezzoProdotto = Convert.ToDecimal(sqlProdotto["Prezzo"]);
-                                string ImmagineProdotto = sqlProdotto["Immagine"].ToString();
-
-                                DataRow newRow = cartData.NewRow();
-                                newRow["Nome"] = NomeProdotto;
-                                newRow["Prezzo"] = PrezzoProdotto;
-                                newRow["Immagine"] = ImmagineProdotto;
-                                cartData.Rows.Add(newRow);
+                                prodottiDal.Add(sqlProdotto["idProdotto"].ToString());
                             }
                             sqlProdotto.Close();
                         }
-                        
-                          conn.Close();
-
-                        CartRepeater.DataSource = cartData;
+                        Prodotto prodotto = new Prodotto();
+                        prodotto.getInfoFromDB();
+                        List<Prodotto> prodottos = prodotto.listaProdottiDB;
+                        List<Prodotto> carello = prodottos.FindAll((prod) => prod.ID == Convert.ToInt32(id));
+                        CartRepeater.DataSource = carello;
                         CartRepeater.DataBind();
+                        conn.Close();
 
+                        ;
                     }
                     catch (Exception ex) { }
                 }
@@ -98,11 +94,8 @@ namespace EpicPharma
                     {
                         carello = (Carrello)Session["Carrello"];
                     }
-
                 }
             }
-
-            
         }
     }
 }
