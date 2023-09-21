@@ -17,26 +17,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                <asp:Repeater ID="CartRepeater" runat="server">
+                <asp:Repeater ID="CartRepeater" runat="server" ItemType="EpicPharma.Prodotto">
                         <ItemTemplate>
                             <tr>
                                 <td>
                                     <div class="item-photo">
-                                        <img src='<%# Eval("Immagine") %>' alt="Immagine">
-                                        <div class="item-name"><%# Eval("Nome") %></div>
+                                        <img src="Content/img/<%# Item.Immagine %>" alt="Immagine">
+                                        <div class="item-name"><%# Item.Nome %></div>
                                     </div>
                                 </td>
-                                <td><%# Eval("Prezzo","{0:C}") %></td>
+                                <td><%# Item.Prezzo %></td>
                                 <td>
                                     <div class="quantity-controls">
                                         <div class="quantity-button">+</div>
                                         <div class="quantity-square m-0">
-                                            <div class="quantity-value"><%# Eval("Quantity") %></div>
+                                            <div class="quantity-value"></div>
                                         </div>
                                         <div class="quantity-button">-</div>
                                     </div>
                                 </td>
-                                <td><%# Eval("Subtotal", "{0:C}") %></td>
+                                <td></td>
                                 <td><i class="bi bi-trash"></i></td>
                             </tr>
                         </ItemTemplate>

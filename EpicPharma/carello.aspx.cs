@@ -21,6 +21,7 @@ namespace EpicPharma
                     try
                     {
                         conn.Open();
+                        // Selezione dell'utente loggato dalla tabella Utenti
                         string queryUtente = "SELECT IdUtente FROM Utenti WHERE Username=@Username";
                         SqlCommand cmdUtente = new SqlCommand(queryUtente, conn);
                         cmdUtente.Parameters.AddWithValue("@Username", username);
@@ -37,56 +38,43 @@ namespace EpicPharma
                         sqlDataReader.Close();
                         sqlDataReader.Dispose();
 
-                        string querySelezione = "SELECT IdProdotto FROM Carrello WHERE IdUtente=@IdUtente";
+                        // Selezione di tutti i prodotti con IdUtente corrispondente all'utente loggato
+                        string querySelezione = "SELECT * FROM Carrello JOIN Prodotti on Carrello.IdProdotto = Prodotti.IdProdotto WHERE Carrello.IdUtente = @IdUtente";
                         SqlCommand cmdSelezione = new SqlCommand(querySelezione, conn);
                         cmdSelezione.Parameters.AddWithValue("@IdUtente", IDUtente);
+
+
                         SqlDataReader sqlSelezione = cmdSelezione.ExecuteReader();
 
                         DataTable cartData = new DataTable();
-                        cartData.Load(sqlSelezione);
                         cartData.Columns.Add("Nome");
                         cartData.Columns.Add("Prezzo");
                         cartData.Columns.Add("Immagine");
 
-                        while (sqlSelezione.Read())
-                        {
-                            string Idprodotto = sqlSelezione["IdProdotto"].ToString();
-                            cartData.Rows.Add(Idprodotto);
-                        }
+                        
+                        string Idprodotto = sqlSelezione["IdProdotto"].ToString();
+                        string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";
+                        SqlCommand cmdProdotto = new SqlCommand(queryProdotto, conn);
+                        cmdProdotto.Parameters.AddWithValue("@IdProdotto", Idprodotto);
 
-                        sqlSelezione.Close();
-                        sqlSelezione.Dispose();
+                        SqlDataReader sqlProdotto = cmdProdotto.ExecuteReader();
 
-                        foreach (DataRow row in cartData.Rows)
-                        {
-                            string Idprodotto = row["IdProdotto"].ToString();
-                            string queryProdotto = "SELECT *  FROM prodotti WHERE IdProdotto=@IdProdotto";
-                            SqlCommand cmdProdotto = new SqlCommand(queryProdotto, conn);
-                            cmdProdotto.Parameters.AddWithValue("@IdProdotto", Idprodotto);
-                            SqlDataReader sqlProdotto = cmdProdotto.ExecuteReader();
-
-                            while (sqlProdotto.Read())
+                        while (sqlProdotto.Read())
                             {
                                 string NomeProdotto = sqlProdotto["Nome"].ToString();
                                 decimal PrezzoProdotto = Convert.ToDecimal(sqlProdotto["Prezzo"]);
                                 string ImmagineProdotto = sqlProdotto["Immagine"].ToString();
 
-                                Prodotto prodotto = new Prodotto
-                                {
-                                    Nome = NomeProdotto,
-                                    Prezzo = PrezzoProdotto,
-                                    Immagine = ImmagineProdotto,
-                                };
                                 DataRow newRow = cartData.NewRow();
-                                newRow["Nome"] = prodotto.Nome;
-                                newRow["Prezzo"] = prodotto.Prezzo;
-                                newRow["Immagine"] = prodotto.Immagine; 
+                                newRow["Nome"] = NomeProdotto;
+                                newRow["Prezzo"] = PrezzoProdotto;
+                                newRow["Immagine"] = ImmagineProdotto; 
                                 cartData.Rows.Add(newRow);
                             }
 
-                                sqlProdotto.Close();
-                            sqlProdotto.Dispose();
-                        }
+                            sqlProdotto.Close();
+
+                        sqlSelezione.Close();
 
                         conn.Close();
 
