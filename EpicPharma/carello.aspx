@@ -22,7 +22,7 @@
                             <tr>
                                 <td>
                                     <div class="item-photo">
-                                        <img id="immagineProdotto" runat="server" src="Content/img/<%# Item.Immagine %>" alt="Immagine">
+                                           <img class="imgC" src="Content/img/<%#Item.Immagine %>" class="card-img-top" alt="...">
                                         <div runat="server" class="item-name"><%# Item.Nome%></div>
                                     </div>
                                 </td>
