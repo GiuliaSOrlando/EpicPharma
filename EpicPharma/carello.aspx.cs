@@ -9,7 +9,8 @@ namespace EpicPharma
     public partial class carello : System.Web.UI.Page
     {
         private List<string> prodottiDalDB = new List<string>();
-        private List<string> prodottiDal = new List<string>();
+
+        private List<Prodotto> Carello = new List<Prodotto>();
 
         protected void Page_Load(object sender, EventArgs e)
 
@@ -71,15 +72,17 @@ namespace EpicPharma
 
                             while (sqlProdotto.Read())
                             {
-                                prodottiDalDB.Add(sqlProdotto["idProdotto"].ToString());
+                                
+                                id = sqlProdotto["idProdotto"].ToString();
+                                Prodotto prodotto = new Prodotto();
+                                prodotto.getInfoFromDB();
+                                List<Prodotto> prodottos = prodotto.listaProdottiDB;
+                                Carello.Add(prodottos.Find((prod) => prod.ID == Convert.ToInt32(id)));
                             }
                             sqlProdotto.Close();
                         }
-                        Prodotto prodotto = new Prodotto();
-                        prodotto.getInfoFromDB();
-                        List<Prodotto> prodottos = prodotto.listaProdottiDB;
-                        List<Prodotto> carello = prodottos.FindAll((prod) => prod.ID == Convert.ToInt32(id));
-                        CartRepeater.DataSource = carello;
+
+                        CartRepeater.DataSource = Carello;
                         CartRepeater.DataBind();
                         conn.Close();
 
