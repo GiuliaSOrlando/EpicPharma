@@ -15,6 +15,8 @@ namespace EpicPharma
         private List<int> quantita = new List<int>();
 
         private List<Prodotto> Carello = new List<Prodotto>();
+        private decimal tota { get; set; }
+        private decimal total { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
 
@@ -85,7 +87,7 @@ namespace EpicPharma
 
                                 Carello.Add(prodottos.Find((prod) => prod.ID == Convert.ToInt32(id)));
 
-                                Carello[n].Quantità = quantita[n];
+                                Carello[n].Quantity = quantita[n];
                                 Carello[n].Costotot = quantita[n] * Carello[n].Prezzo;
                                 n++;
                             }
@@ -109,6 +111,10 @@ namespace EpicPharma
                     }
                 }
             }
+            Carello.ForEach((ep) => tota += ep.Costotot);
+            tot.InnerHtml = String.Format("{0:C}", tota);
+            total = tota + 5;
+            totsped.InnerHtml = String.Format("{0:C}", total);
         }
 
         protected void btnAumenta_Click(object sender, EventArgs e)
@@ -186,6 +192,18 @@ namespace EpicPharma
                     cmd.Parameters.AddWithValue("@IdProdotto", productId);
                     cmd.ExecuteNonQuery();
                 }
+            }
+        }
+
+        protected void toggleCollapseButton_Click(object sender, EventArgs e)
+        {
+            if (collapseContentPanel.Visible)
+            {
+                collapseContentPanel.Visible = false;
+            }
+            else
+            {
+                collapseContentPanel.Visible = true;
             }
         }
     }

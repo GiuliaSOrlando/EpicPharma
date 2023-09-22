@@ -11,7 +11,11 @@ namespace EpicPharma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            admin_icon.Visible = false;
+            if (AdminSwitch.admin == true)
+            {
+                admin_icon.Visible = true;
+            }
         }
     }
 }

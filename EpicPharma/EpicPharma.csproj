@@ -103,15 +103,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cart.aspx" />
+    <Content Include="Content\img\931848865.png" />
     <Content Include="Content\img\Aboca.jpg" />
-    <Content Include="Content\img\alimentazione.jpg" />
-    <Content Include="Content\img\automedicazione.jpg" />
-    <Content Include="Content\img\integratori.png" />
+    <Content Include="Content\img\benagol.png" />
+    <Content Include="Content\img\biochetasi-reflusso-20-stick-monodose.png" />
+    <Content Include="Content\img\EPIC_PHARMA_ridotto.png" />
     <Content Include="Content\img\Multicentrum.jpg" />
     <Content Include="Content\img\omegatre.jpg" />
-    <Content Include="Content\img\personalcare.jpeg" />
-    <Content Include="Content\img\presidimedicali.jpeg" />
-    <Content Include="Content\img\primainfanzia.jpg" />
+    <Content Include="Content\img\phyto.png" />
+    <Content Include="Content\img\tachipirina.jpg" />
     <Content Include="Content\img\Vetoquinol1.jpg" />
     <Content Include="Vetrina.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -130,8 +130,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\img\EPIC_PHARMA_ridotto.png" />
-    <Content Include="Content\img\tachipirina.jpg" />
     <Content Include="DBManagment.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
@@ -167,6 +165,15 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Wishlist.aspx" />
+    <Content Include="Content\img\931848865.avif" />
+    <Content Include="Content\img\barrette.avif" />
+    <Content Include="Content\img\cremamani.avif" />
+    <Content Include="Content\img\marsupiobimbo.avif" />
+    <Content Include="Content\img\misuratorepressione.avif" />
+    <Content Include="Content\img\pastafelicia.avif" />
+    <Content Include="Content\img\phyto.avif" />
+    <Content Include="Content\img\pictermometro.avif" />
+    <Content Include="Content\img\polase.avif" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

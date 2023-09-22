@@ -23,33 +23,38 @@ namespace EpicPharma
 
             try
             {
-                bool boolConfirmation;
-                string adminConfirmationString = "42istheanswer";
-                if (Admin_Input.Text == adminConfirmationString)
-                {
-                    boolConfirmation = true;
-                }
-                else
-                {
-                    boolConfirmation = false;
-                }
-
                 conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO Utenti VALUES (@Nome, @Cognome, @Email, @Username, @Password, @Admin)";
-                cmd.Parameters.AddWithValue("Nome", Nome_Input.Text);
-                cmd.Parameters.AddWithValue("Cognome", Cognome_Input.Text);
-                cmd.Parameters.AddWithValue("Email", Email_Input.Text);
+
+                string querySelezione = "SELECT * FROM Utenti  WHERE Username= @Username";
+                SqlCommand cmd = new SqlCommand(querySelezione, conn);
                 cmd.Parameters.AddWithValue("Username", Username_Input.Text);
-                cmd.Parameters.AddWithValue("Password", Password_Input.Text);
-                cmd.Parameters.AddWithValue("Admin", boolConfirmation);
-
-                int inserimentoEffettuato = cmd.ExecuteNonQuery();
-
-                if (inserimentoEffettuato > 0)
+                int count = (int)cmd.ExecuteScalar();
+                if (count == 0)
                 {
-                    Response.Write("Inserimento effettuato con successo");
+                    bool boolConfirmation;
+                    string adminConfirmationString = "42istheanswer";
+                    if (Admin_Input.Text == adminConfirmationString)
+                    {
+                        boolConfirmation = true;
+                    }
+                    else
+                    {
+                        boolConfirmation = false;
+                    }
+                    cmd.CommandText = "INSERT INTO Utenti VALUES (@Nome, @Cognome, @Email, @Username, @Password, @Admin)";
+                    cmd.Parameters.AddWithValue("Nome", Nome_Input.Text);
+                    cmd.Parameters.AddWithValue("Cognome", Cognome_Input.Text);
+                    cmd.Parameters.AddWithValue("Email", Email_Input.Text);
+                    cmd.Parameters.AddWithValue("Username", Username_Input.Text);
+                    cmd.Parameters.AddWithValue("Password", Password_Input.Text);
+                    cmd.Parameters.AddWithValue("Admin", boolConfirmation);
+
+                    int inserimentoEffettuato = cmd.ExecuteNonQuery();
+
+                    if (inserimentoEffettuato > 0)
+                    {
+                        Response.Write("Inserimento effettuato con successo");
+                    }
                 }
             }
             catch (Exception ex) { }

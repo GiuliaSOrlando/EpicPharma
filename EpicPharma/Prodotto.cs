@@ -24,9 +24,7 @@ namespace EpicPharma
         public DateTime Datascadenza { get; set; }
         public bool InStock { get; set; }
         public string GruppoMerciologico { get; set; }
-        public int Quantità { get; set; }   
-
-        public int Quantità { get; set; }
+        public int Quantity { get; set; }   
         public decimal Costotot { get; set; }
 
         public Prodotto() { }

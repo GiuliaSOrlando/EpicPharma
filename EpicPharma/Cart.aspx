@@ -31,13 +31,14 @@
                                     <div class="quantity-controls">
                                        <asp:Button ID="btnAumenta" runat="server" Text="+" CssClass="btn_qta" OnClick="btnAumenta_Click" CommandArgument="<%# Item.ID %>"/>
                                         <div class="quantity-square m-0">
-                                            <div class="quantity-value"> <%# Item.Quantità %> </div>
+                                            <div class="quantity-value"> <%# Item.Quantity %> </div>
                                         </div>
                                        <asp:Button ID="Button2" runat="server" Text="-" CssClass="btn_qta" OnClick="btnDiminuisci_Click" CommandArgument="<%# Item.ID %>"/>
                                     </div>
                                 </td>
                                 <td><%# Item.Costotot.ToString("C2") %></td>
-                                <td><i class="bi bi-trash"></i></td>
+                             
+                                    <i class="bi bi-trash"></i></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -46,17 +47,26 @@
         </div>
 
        <!-- Riepilogo -->
-        <div class="riepilogo-container">
-            <h2>Riepilogo</h2>
-            <hr>
-            <div class="custom-dropdown">
-                <label for="custom-dropdown" class="dropdown-label">Seleziona la destinazione per avere stima delle spese di spedizione</label>
+        <!-- Riepilogo -->
+<div class='riepilogo-container'>
+    <h2>Riepilogo</h2>
+    <hr>
+    <asp:Button runat="server" ID="toggleCollapseButton" Text="Spese di spedizione ▼ "  OnClick="toggleCollapseButton_Click" />
+    <asp:Label runat="server" ID="collapseLink"></asp:Label>
+    <asp:Panel runat="server" ID="collapseContentPanel">
+        <div class="vertical-column">
+            <!-- Contenuto da nascondere/espandere -->
+            <div class="dropdown-container">
+                <p>Scegli la nazione</p>
                 <select id="custom-dropdown" class="dropdown-content">
                     <option value="" disabled selected>Nazione</option>
                     <option value="italy">Italia</option>
                 </select>
-                <select id="province-dropdown" class="dropdown-content">
-                    <option value="" disabled selected>Regione</option>
+            </div>
+            <div class="dropdown-container">
+                <p>Scegli la regione</p>
+                <select id="region-dropdown" class="dropdown-content">
+                    <option value="" disabled selected>Seleziona Regione...</option>
                     <option value="abruzzo">Abruzzo</option>
                     <option value="basilicata">Basilicata</option>
                     <option value="calabria">Calabria</option>
@@ -78,8 +88,11 @@
                     <option value="valle-daosta">Valle d'Aosta</option>
                     <option value="veneto">Veneto</option>
                 </select>
+            </div>
+            <div class="dropdown-container">
+                <p>Scegli la città</p>
                 <select id="city-dropdown" class="dropdown-content">
-                    <option value="" disabled selected>Città</option>
+                    <option value="" disabled selected>Seleziona Città...</option>
                     <option value="rome">Roma</option>
                     <option value="milan">Milano</option>
                     <option value="venice">Venezia</option>
@@ -99,30 +112,35 @@
                     <option value="turin">Torino</option>
                     <option value="genoa">Genova</option>
                 </select>
+            </div>
+            <div class="dropdown-container">
+                <p>Inserisci il CAP</p>
                 <input type="text" id="zip" class="dropdown-content" placeholder="Inserisci il CAP">
             </div>
-            <hr>
-            <div class="subtotale">
-                <span>Subtotale</span>
-                <span>30.00€</span>
-            </div>
-            <hr>
-            <div class="spese-gestione">
-                <span>Costi di spedizione</span>
-                <span>1.00€</span>
-            </div>
-            <hr>
-            <div class="totale">
-                <strong>Totale ordine</strong>
-                <span>31.00€</span>
-            </div>
-            <hr>
-            <button class="myButton">PROCEDI AL PAGAMENTO</button>
-            <hr>
-            <p>Applica codice sconto</p>
-            <input type="text" class="dropdown-content" placeholder="Inserisci il codice sconto">
-            <hr>
-            <button class="myButton">APPLICA SCONTO</button>
         </div>
+    </asp:Panel>
+    <hr>
+    <div class="subtotale">
+        <span>Subtotale</span>
+        <span id="tot" runat="server"></span>
     </div>
+    <hr>
+    <div class="spese-gestione">
+        <span>Costi di spedizione</span>
+        <span>5.00€</span>
+    </div>
+    <hr>
+    <div class="totale">
+        <strong>Totale ordine</strong>
+        <span id="totsped" runat="server"></span>
+    </div>
+    <hr>
+    <button class="myButton">PROCEDI AL PAGAMENTO</button>
+    <hr>
+    <p>Applica codice sconto</p>
+    <input type="text" class="dropdown-content" placeholder="Inserisci il codice sconto">
+    <hr>
+    <button class="myButton">APPLICA SCONTO</button>
+</div>
+</div>
 </asp:Content>

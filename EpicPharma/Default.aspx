@@ -68,7 +68,7 @@
         </nav>
     
     
-    <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
+    <div class="row row-cols-1 row-cols-md3 g-4 pt-5" >
 
 
     <%-- INIZIO CARD--%>
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-
+        </div>
 
 </asp:Content>
 

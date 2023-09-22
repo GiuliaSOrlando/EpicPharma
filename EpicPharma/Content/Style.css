@@ -168,78 +168,7 @@ fotter p {
             color: #cc0000;
         }
 
-/* Riepilogo-container */
-.riepilogo-container {
-    max-width: 70vh;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
 
-    .riepilogo-container h2 {
-        color: #333;
-    }
-
-    .riepilogo-container p {
-        margin: 0;
-        font-weight: bold;
-    }
-
-    .riepilogo-container hr {
-        border: 1px solid #ccc;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .riepilogo-container div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .riepilogo-container button {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-}
-
-.quantity-square {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.quantity-button {
-    width: 30px;
-    height: 30px;
-    background-color: #8AC87C;
-    color: #fff;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-    .quantity-button:hover {
-        background-color: #354984;
-    }
 
 /*PAGINA ACCEDI*/
 #contenitore_login {
@@ -635,3 +564,76 @@ a {
     a:hover .DarkMode {
         opacity: 0;
     }
+
+/*Style home*/
+.btn-home {
+    margin: 20px 0 0 0;
+    box-shadow: 3px 3px 2px 0px rgba(154, 154, 154, 1.2);
+    background: rgb(138,200,124);
+    background: linear-gradient(150deg, rgba(138,200,124,1) 53%, rgba(187,215,181,1) 92%);
+    border-radius: 6px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 7px 19px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #e1e2ed;
+}
+
+.btn-home:hover {
+    background: rgb(138,200,124);
+    background: linear-gradient(150deg, rgba(187,215,181,1)23%, rgba(138,200,124,1) 77% );
+}
+
+.btn-home:active {
+    position: relative;
+    top: 1px;
+}
+
+.my-3 {
+    font-size: 25px;
+}
+
+.titleCard {
+    font-size: 19px;
+}
+
+/* Riepilogo-container */
+.dropdown-container {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.dropdown-content {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+#toggleCollapseButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+    #toggleCollapseButton:hover {
+        background-color: #0056b3;
+    }
+
+#zip {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
