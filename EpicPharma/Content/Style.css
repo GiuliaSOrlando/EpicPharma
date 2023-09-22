@@ -267,7 +267,7 @@ fotter p {
 /*button*/
 .myButton {
     margin: 20px 0 0 0;
-    box-shadow: 3px 3px 2px 0px rgba(154, 154, 154, 1.2);
+    box-shadow: 3px 3px 10px 0px rgba(154, 154, 154, 1.2);
     background: rgb(138,200,124);
     background: linear-gradient(150deg, rgba(138,200,124,1) 53%, rgba(187,215,181,1) 92%);
     border-radius: 6px;
@@ -360,7 +360,7 @@ fotter p {
 }
 /*/Style Home*/
 
-.carousel {
+.carousel{
     width: 90rem;
 }
 

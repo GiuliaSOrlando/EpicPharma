@@ -4,110 +4,73 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="carousel" class="d-flex justify-content-center">
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+
+                <div id="carousel" class="d-flex justify-content-center w-100">
+                    <div id="myCarousel" class="carousel slide mb-6 w-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                        </div>
+                        <div class="carousel-inner" >
+                            <div class="carousel-item">
+
+                                <img src="Content/img/Vetoquinol1.jpg" class="bd-placeholder-img" width="100%"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
+
+                            </div>
+                            <div class="carousel-item active">
+
+                                <img src="Content/img/Aboca.jpg" class="bd-placeholder-img" width="100%"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
+
+                            </div>
+                            <div class="carousel-item">
+
+                                <img src="Content/img/Multicentrum.jpg" class="bd-placeholder-img" width="100%"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+        
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse  d-flex justify-content-center" id="navbarNav">
+                <ul class="navbar-nav py-3">
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="Alimentazione" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="Alimentazione_Click">Alimentazione</asp:LinkButton>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="Automedicazione" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="Automedicazione_Click">Automedicazione</asp:LinkButton>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="Integratori" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="Integratori_Click">Integratori</asp:LinkButton>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="PresidiMedici" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="PresidiMedici_Click">Presidi Medici</asp:LinkButton>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="PrimaInfanzia" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="PrimaInfanzia_Click">Prima Infanzia</asp:LinkButton>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <asp:LinkButton ID="PersonalCare" runat="server" CssClass="nav-link text-light text-uppercase fs-5" OnClick="PersonalCare_Click">Personal Care</asp:LinkButton>
+                    </li>
+                </ul>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item">
-
-                    <img src="Content/img/Vetoquinol1.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
-
-                </div>
-                <div class="carousel-item active">
-
-                    <img src="Content/img/Aboca.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
-
-                </div>
-                <div class="carousel-item">
-
-                    <img src="Content/img/Multicentrum.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></img>
-
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-        <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
+        </nav>
+    
+    
+    <div class="row row-cols-1 row-cols-md3 g-4 py-5" >
 
 
-        <a href="#"  class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Automedicazione.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                    <h5 class="catetext">Automedicazione</h5>                    
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Personal care.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                    <h5 class="catetext">Personal <br /> Care </h5> 
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Prima infanzia.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                   <h5 class="catetext">Prima <br /> Infanzia</h5> 
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Integratori.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                    <h5 class="catetext">Integratori</h5> 
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Presidi Medicali.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                   <h5 class="catetext">Presidi <br /> Medicali </h5> 
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="col col-sm-6 col-md-2 col-lg-2 ">
-
-            <div class="card text-bg-dark">
-                <img src="Content/img/Alimentazione.jpeg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="DarkMode" ></div>
-                 <h5 class="catetext">Alimentazione</h5> 
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
     <%-- INIZIO CARD--%>
 
     <div class="container py-3">
@@ -151,7 +114,7 @@
 
 
 </asp:Content>
-<%-- Inizio Ctegory--%>
+
 
         
        

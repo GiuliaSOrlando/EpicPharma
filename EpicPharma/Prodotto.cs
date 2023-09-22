@@ -26,6 +26,9 @@ namespace EpicPharma
         public string GruppoMerciologico { get; set; }
         public int Quantità { get; set; }   
 
+        public int Quantità { get; set; }
+        public decimal Costotot { get; set; }
+
         public Prodotto() { }
         public Prodotto(string nome, string descrizione, decimal prezzo, string categoria, string immagine, bool instock, string gruppomerciologico) {
             Nome = nome;
@@ -111,7 +114,8 @@ namespace EpicPharma
                     Composizione = sqlDataReader["Composizione"].ToString(),
                     Immagine = sqlDataReader["Immagine"].ToString(),
                     Datascadenza = Convert.ToDateTime(sqlDataReader["DataScadenza"].ToString()),
-                    InStock = Convert.ToBoolean(sqlDataReader["InStock"].ToString())
+                    InStock = Convert.ToBoolean(sqlDataReader["InStock"].ToString()),
+                    GruppoMerciologico = sqlDataReader["GruppoMerciologico"].ToString()
                 };
                 listaProdottiDB.Add(prodotto);
             }

@@ -29,14 +29,14 @@
                                 <td runat="server"><%# Item.Prezzo.ToString("C2") %></td>
                                 <td>
                                     <div class="quantity-controls">
-                                        <div class="quantity-button">+</div>
+                                       <asp:Button ID="btnAumenta" runat="server" Text="+" CssClass="btn_qta" OnClick="btnAumenta_Click" CommandArgument="<%# Item.ID %>"/>
                                         <div class="quantity-square m-0">
-                                            <div class="quantity-value"></div>
+                                            <div class="quantity-value"> <%# Item.Quantità %> </div>
                                         </div>
-                                        <div class="quantity-button">-</div>
+                                       <asp:Button ID="Button2" runat="server" Text="-" CssClass="btn_qta" OnClick="btnDiminuisci_Click" CommandArgument="<%# Item.ID %>"/>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td><%# Item.Costotot.ToString("C2") %></td>
                                 <td><i class="bi bi-trash"></i></td>
                             </tr>
                         </ItemTemplate>

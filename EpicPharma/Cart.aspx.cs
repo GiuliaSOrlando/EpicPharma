@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace EpicPharma
 {
     public partial class carello : System.Web.UI.Page
     {
         private List<string> prodottiDalDB = new List<string>();
+
+        private List<int> quantita = new List<int>();
 
         private List<Prodotto> Carello = new List<Prodotto>();
 
@@ -56,14 +60,14 @@ namespace EpicPharma
                         Prodotto prodotto = new Prodotto();
                         while (sqlSelezione.Read())
                         {
-                            prodotto.Quantità = Convert.ToInt32(sqlSelezione["quantita"].ToString());
+                            quantita.Add(Convert.ToInt32(sqlSelezione["quantita"].ToString()));
                             string IDProdotto = sqlSelezione["IdProdotto"].ToString();
                             prodottiDalDB.Add(IDProdotto);
                         }
 
                         sqlSelezione.Close();
                         string id = "";
-
+                        int n = 0;
                         foreach (string IdProdotto in prodottiDalDB)
                         {
                             string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";
@@ -74,12 +78,16 @@ namespace EpicPharma
 
                             while (sqlProdotto.Read())
                             {
-                                
                                 id = sqlProdotto["idProdotto"].ToString();
-                
+
                                 prodotto.getInfoFromDB();
                                 List<Prodotto> prodottos = prodotto.listaProdottiDB;
+
                                 Carello.Add(prodottos.Find((prod) => prod.ID == Convert.ToInt32(id)));
+
+                                Carello[n].Quantità = quantita[n];
+                                Carello[n].Costotot = quantita[n] * Carello[n].Prezzo;
+                                n++;
                             }
                             sqlProdotto.Close();
                         }
@@ -99,6 +107,84 @@ namespace EpicPharma
                     {
                         carello = (Carrello)Session["Carrello"];
                     }
+                }
+            }
+        }
+
+        protected void btnAumenta_Click(object sender, EventArgs e)
+        {
+            Button btnAumenta = (Button)sender;
+
+            int prodottoId = Convert.ToInt32(btnAumenta.CommandArgument); ;
+            Carrello carrello = new Carrello();
+            carrello = (Carrello)Session["Carrello"];
+            CartItem prodotto = carrello.CartItems.FirstOrDefault(p => p.IdProdotto == prodottoId);
+
+            if (prodotto != null)
+            {
+                prodotto.Quantita++;
+                UpdateDatabaseQuantity(prodottoId, prodotto.Quantita);
+            }
+            else
+            {
+                carrello.CartItems.Add(new CartItem
+                {
+                    IdProdotto = prodottoId,
+                    Quantita = 1
+                });
+                UpdateDatabaseQuantity(prodottoId, 1);
+            }
+            Response.Redirect("cart.aspx");
+        }
+
+        protected void btnDiminuisci_Click(object sender, EventArgs e)
+        {
+            Button btnDiminuisci = (Button)sender;
+            int prodottoId = Convert.ToInt32(btnDiminuisci.CommandArgument);
+            Carrello carrello = new Carrello();
+            carrello = (Carrello)Session["Carrello"];
+            CartItem prodotto = carrello.CartItems.FirstOrDefault(p => p.IdProdotto == prodottoId);
+
+            if (prodotto != null && prodotto.Quantita > 1)
+            {
+                prodotto.Quantita--;
+                UpdateDatabaseQuantity(prodottoId, prodotto.Quantita);
+            }
+            else if (prodotto != null && prodotto.Quantita == 1)
+            {
+                carrello.CartItems.Remove(prodotto);
+                RemoveFromDatabase(prodottoId);
+            }
+            Response.Redirect("cart.aspx");
+        }
+
+        private void UpdateDatabaseQuantity(int productId, int quantity)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string updateQuery = "UPDATE Carrello SET Quantita = @Quantita WHERE IdProdotto = @IdProdotto";
+                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Quantita", quantity);
+                    cmd.Parameters.AddWithValue("@IdProdotto", productId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void RemoveFromDatabase(int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string deleteQuery = "DELETE FROM Carrello WHERE IdProdotto = @IdProdotto";
+                using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdProdotto", productId);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

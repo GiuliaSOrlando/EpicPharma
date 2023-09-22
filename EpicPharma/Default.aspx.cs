@@ -11,6 +11,8 @@ namespace EpicPharma
 {
     public partial class Default : System.Web.UI.Page
     {
+        private string categoria { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,13 +28,20 @@ namespace EpicPharma
                     carrello = new Carrello();
                     Session["Carrello"] = carrello;
                 }
-
+            }
+            if (categoria != null)
+            {
+                Prodotto prodotto = new Prodotto();
+                prodotto.getInfoFromDB();
+                List<Prodotto> prodottos = prodotto.listaProdottiDB;
+                List<Prodotto> prodotti = prodottos.FindAll((p) => p.GruppoMerciologico == categoria);
+                ProductRepeater.DataSource = prodotti;
+                ProductRepeater.DataBind();
             }
         }
 
         protected void AddToChart_Button_OnClick(object sender, EventArgs e)
         {
-
             Button btnAggiungiProdotto = (Button)sender;
             int index = Convert.ToInt32(btnAggiungiProdotto.CommandArgument);
             Carrello carrello = new Carrello();
@@ -59,7 +68,6 @@ namespace EpicPharma
                     while (sqlDataReader.Read())
                     {
                         IDUtente = sqlDataReader["IdUtente"].ToString();
-
                     }
                     sqlDataReader.Close();
                     sqlDataReader.Dispose();
@@ -101,7 +109,6 @@ namespace EpicPharma
                     conn.Close();
                 }
 
-
                 // Se l'utente non è loggato, il carrello viene aggiornato solo a livello di Session
                 else
                 {
@@ -109,7 +116,6 @@ namespace EpicPharma
                     if (elementoSelezionato != null)
                     {
                         elementoSelezionato.Quantita++;
-
                     }
                     // Se il prodotto non è presente, viene aggiunto al carrello
                     else
@@ -125,6 +131,41 @@ namespace EpicPharma
             }
         }
 
+        protected void Automedicazione_Click(object sender, EventArgs e)
+        {
+            categoria = "Automedicazione";
+            Page_Load(sender, e);
+        }
+
+        protected void Alimentazione_Click(object sender, EventArgs e)
+        {
+            categoria = "Alimentazione";
+            Page_Load(sender, e);
+        }
+
+        protected void Integratori_Click(object sender, EventArgs e)
+        {
+            categoria = "Integratore";
+            Page_Load(sender, e);
+        }
+
+        protected void PresidiMedici_Click(object sender, EventArgs e)
+        {
+            categoria = "Presidi medici";
+            Page_Load(sender, e);
+        }
+
+        protected void PrimaInfanzia_Click(object sender, EventArgs e)
+        {
+            categoria = "Prima infanzia";
+            Page_Load(sender, e);
+        }
+
+        protected void PersonalCare_Click(object sender, EventArgs e)
+        {
+            categoria = "Personal care";
+            Page_Load(sender, e);
+        }
+
     }
 }
-    
