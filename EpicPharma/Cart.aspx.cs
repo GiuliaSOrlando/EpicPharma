@@ -53,9 +53,10 @@ namespace EpicPharma
                         cartData.Columns.Add("Nome");
                         cartData.Columns.Add("Prezzo");
                         cartData.Columns.Add("Immagine");
-
+                        Prodotto prodotto = new Prodotto();
                         while (sqlSelezione.Read())
                         {
+                            prodotto.Quantità = Convert.ToInt32(sqlSelezione["quantita"].ToString());
                             string IDProdotto = sqlSelezione["IdProdotto"].ToString();
                             prodottiDalDB.Add(IDProdotto);
                         }
@@ -75,7 +76,7 @@ namespace EpicPharma
                             {
                                 
                                 id = sqlProdotto["idProdotto"].ToString();
-                                Prodotto prodotto = new Prodotto();
+                
                                 prodotto.getInfoFromDB();
                                 List<Prodotto> prodottos = prodotto.listaProdottiDB;
                                 Carello.Add(prodottos.Find((prod) => prod.ID == Convert.ToInt32(id)));
