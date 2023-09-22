@@ -23,12 +23,15 @@
                                 <td>
                                     <div class="item-photo">
                                            <img class="imgC card-img-top" src="Content/img/<%#Item.Immagine %>" alt="Immagine">
-                                        <div runat="server" class="item-name"><%# Item.Nome%></div>
+                                        
                                     </div>
+                                </td>
+                                <td>
+                                    <div runat="server" class="item-name"><%# Item.Nome%></div>
                                 </td>
                                 <td runat="server"><%# Item.Prezzo.ToString("C2") %></td>
                                 <td>
-                                    <div class="quantity-controls">
+                                    <div class="quantity-controls d-flex">
                                        <asp:Button ID="btnAumenta" runat="server" Text="+" CssClass="btn_qta" OnClick="btnAumenta_Click" CommandArgument="<%# Item.ID %>"/>
                                         <div class="quantity-square m-0">
                                             <div class="quantity-value"> <%# Item.Quantity %> </div>
@@ -37,8 +40,9 @@
                                     </div>
                                 </td>
                                 <td><%# Item.Costotot.ToString("C2") %></td>
-                             
-                                    <i class="bi bi-trash"></i></td>
+                                <td>
+                                    <asp:Button ID="Button1" runat="server" Text="ELIMINA" CssClass="btn btn-danger" OnClick="Button1_Click" CommandArgument="<%# Item.ID %>"/>
+                                </td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -49,9 +53,13 @@
        <!-- Riepilogo -->
         <!-- Riepilogo -->
 <div class='riepilogo-container'>
-    <h2>Riepilogo</h2>
+    <div class="d-flex justify-content-around mt-5">
+        <h2>Riepilogo</h2>
+        <asp:Button runat="server" ID="toggleCollapseButton" CssClass="border-0" Text="▼ " OnClick="toggleCollapseButton_Click" />
+    </div>
+    
     <hr>
-    <asp:Button runat="server" ID="toggleCollapseButton" Text="Spese di spedizione ▼ "  OnClick="toggleCollapseButton_Click" />
+    
     <asp:Label runat="server" ID="collapseLink"></asp:Label>
     <asp:Panel runat="server" ID="collapseContentPanel">
         <div class="vertical-column">

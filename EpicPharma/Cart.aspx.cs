@@ -206,5 +206,15 @@ namespace EpicPharma
                 collapseContentPanel.Visible = true;
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Button btnAumenta = (Button)sender;
+
+            int prodottoId = Convert.ToInt32(btnAumenta.CommandArgument); ;
+
+                RemoveFromDatabase(prodottoId);
+            Response.Redirect("cart.aspx");
+        }
     }
 }
