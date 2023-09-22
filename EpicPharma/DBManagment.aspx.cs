@@ -29,6 +29,7 @@ namespace EpicPharma
                 while (sqlDataReader.Read())
                 {
                     if (Convert.ToBoolean(sqlDataReader["Admin"]) == true) {
+                            AdminSwitch.admin = true;
                     }
                     else
                     {
@@ -50,5 +51,10 @@ namespace EpicPharma
             Prodotto prodotto = new Prodotto(Nome_Input.Text, Descrizione_Input.Text, Convert.ToDecimal(Prezzo_Input.Text), Categoria_Input.Text, Brand_Input.Text, Modalita_Input.Text, Composizione_Input.Text, fileNameProdotto, Convert.ToDateTime(DataScadenza_Input.Text), InStock_Input.Checked, GruppoMerciologico_Input.Text) ;
             prodotto.setInfoIntoDB();
         }
+    }
+    public static class AdminSwitch
+    {
+        public static bool admin =false;
+
     }
 }

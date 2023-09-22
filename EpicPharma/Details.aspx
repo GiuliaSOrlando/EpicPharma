@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="contenitore_dettagli_top">
-        <div>
+        <div class="div_img">
             <asp:Image ID="Image1" runat="server" CssClass="main_img" />
         </div>
         <div>
@@ -35,7 +35,7 @@
                 <hr />
             </div>
             <div id="preferiti">
-                <i class="bi bi-star me-3"></i>
+                <button id="icon_btn" runat="server"><i class="bi bi-star me-3"></i></button>
                 <span>AGGIUNGI ALLA TUA WISHLIST</span>
             </div>
         </div>

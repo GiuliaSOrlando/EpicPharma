@@ -326,6 +326,9 @@ fotter p {
     width: 550px;
 }
 
+.div_img {
+    border: 3px solid #cccccc;
+}
 #contenitore_dettagli_top {
     display: flex;
     justify-content: space-around;
@@ -357,6 +360,19 @@ fotter p {
 
 #cotenitore_dettagli_bottom {
     margin: 80px 0 40px 80px;
+}
+
+#preferiti button {
+    padding: 0;
+    border: none;
+}
+    #preferiti button:hover {
+        position: relative;
+        top: 1px;
+    }
+#preferiti button i {
+    font-size: 2em;
+    color: #8AC87C;
 }
 /*/Style Home*/
 

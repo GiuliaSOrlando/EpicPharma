@@ -33,6 +33,15 @@ namespace EpicPharma
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controllo admin_icon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor admin_icon;
+
+        /// <summary>
         /// Controllo ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
