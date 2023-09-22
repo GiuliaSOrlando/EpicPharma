@@ -19,7 +19,7 @@
                 <div>
                     <div class="div_qta">
                         <span>QTÀ</span>
-                        <asp:Button ID="Button2" runat="server" Text="-" CssClass="btn_qta" />
+                        <asp:Button ID="Button2" runat="server" Text="-" CssClass="btn_qta" OnClick="btnDiminuisci_Click"/>
                         <span id="quantita" runat="server">1</span>
                         <asp:Button ID="btnAumenta" runat="server" Text="+" CssClass="btn_qta" OnClick="btnAumenta_Click"/>
                     </div>

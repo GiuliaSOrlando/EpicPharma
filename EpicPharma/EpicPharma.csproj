@@ -102,7 +102,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="carello.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Content\img\Aboca.jpg" />
     <Content Include="Content\img\Multicentrum.jpg" />
     <Content Include="Content\img\omegatre.jpg" />
@@ -197,12 +197,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="carello.aspx.cs">
-      <DependentUpon>carello.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="carello.aspx.designer.cs">
-      <DependentUpon>carello.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Carrello.cs" />
     <Compile Include="Vetrina.aspx.cs">

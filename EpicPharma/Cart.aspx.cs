@@ -62,6 +62,7 @@ namespace EpicPharma
 
                         sqlSelezione.Close();
                         string id = "";
+
                         foreach (string IdProdotto in prodottiDalDB)
                         {
                             string queryProdotto = "SELECT *  FROM Prodotti WHERE IdProdotto=@IdProdotto";

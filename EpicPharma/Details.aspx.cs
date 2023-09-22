@@ -146,6 +146,7 @@ namespace EpicPharma
             if (prodotto != null)
             {
                 prodotto.Quantita++;
+                UpdateDatabaseQuantity(prodottoId, prodotto.Quantita);
             }
             else
             {
@@ -154,10 +155,59 @@ namespace EpicPharma
                     IdProdotto = prodottoId,
                     Quantita = 1
                 });
+                UpdateDatabaseQuantity(prodottoId, 1);
             }
-
         }
-        // WORK IN PROGRESS: da finire di implementare
+        protected void btnDiminuisci_Click(object sender, EventArgs e)
+        {
+            Button btnDiminuisci = (Button)sender;
+            int prodottoId = Convert.ToInt32(Request.QueryString["id"]);
+            Carrello carrello = new Carrello();
+            carrello = (Carrello)Session["Carrello"];
+            CartItem prodotto = carrello.CartItems.FirstOrDefault(p => p.IdProdotto == prodottoId);
+
+            if (prodotto != null && prodotto.Quantita > 1)
+            {
+                prodotto.Quantita--;
+                UpdateDatabaseQuantity(prodottoId, prodotto.Quantita);
+            }
+            else if (prodotto != null && prodotto.Quantita == 1)
+            {
+                carrello.CartItems.Remove(prodotto);
+                RemoveFromDatabase(prodottoId);
+            }
+        }
+
+        private void UpdateDatabaseQuantity(int productId, int quantity)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string updateQuery = "UPDATE Carrello SET Quantita = @Quantita WHERE IdProdotto = @IdProdotto";
+                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Quantita", quantity);
+                    cmd.Parameters.AddWithValue("@IdProdotto", productId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void RemoveFromDatabase(int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string deleteQuery = "DELETE FROM Carrello WHERE IdProdotto = @IdProdotto";
+                using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdProdotto", productId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="carello.aspx.cs" Inherits="EpicPharma.carello" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="EpicPharma.carello" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,11 +22,11 @@
                             <tr>
                                 <td>
                                     <div class="item-photo">
-                                           <img class="imgC" src="Content/img/<%#Item.Immagine %>" class="card-img-top" alt="...">
+                                           <img class="imgC card-img-top" src="Content/img/<%#Item.Immagine %>" alt="Immagine">
                                         <div runat="server" class="item-name"><%# Item.Nome%></div>
                                     </div>
                                 </td>
-                                <td runat="server"><%# Item.Prezzo %></td>
+                                <td runat="server"><%# Item.Prezzo.ToString("C2") %></td>
                                 <td>
                                     <div class="quantity-controls">
                                         <div class="quantity-button">+</div>
